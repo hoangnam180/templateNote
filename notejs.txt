@@ -880,6 +880,8 @@ Intl.NumberFormat
 //Thư viênj hỗ trợ backend node js nodemon -> auto restart server 
 npm i nodemon
 
+//Morgan -> log request 
+template engine (handlebars) npm handlebars xử lý html send
 
 
 
