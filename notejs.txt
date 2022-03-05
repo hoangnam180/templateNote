@@ -1,0 +1,879 @@
+LÀM QUEN VỚI JAVASCRIPT
+Hàm cơ bản : built-in funciton
++ Alert : Thông báo lên màn hình 
+
++ Console:in ra dòng log bên dev-tool
+{ console.log(fullName) ; }	
+
++Confirm(‘Xac nhận bạn đủ tuổi’);//để tạo ra hộp thoại
+
++Prompt(‘Xac nhận bạn đủ tuổi’)//tương tự confirm nhưng có thêm ô input để nhập vào;
++ setTimeout(function() {
+alert(‘Thong bao’)
+},1000)//sau thời gian quy định thì sẽ in thôg baó lên màn hình ;
+
++setInterval(function(){
+Console.log(‘Đây là log’)
+},1000)//cachs 1s là in ra 1 dòng
+
+Toán tử : prefix : tiền tố : trước biến hạng;
+Postfix : Hậu tố : sau biến hạng;
+
+Điều kiện if else;
+Các giá trị là false trong js : false,””,’’,underfined,Nan,null;
+Còn lại tất cả là true ;
+
+Kiểu dữ liệu:
+Kiểu nguyên thủy : + Number 
++ String, Boolean,Undefined, Null,Symbol;
+Kiểu phức tạp : function,Object;
+
+Var id = Symbol(‘id ’);
+//var myFunction=function(){
+   alert(‘HI .Xin chao cac ban ’);
+}
+Gọi function  myFunction();
+
+//Object types :
+Var myObject = {
+    Name : ‘Hoang Nam ’,
+   Age:18,
+   Adrees: ‘Ha noi’
+};
+
+Var myArray = [
+    ‘javascript’,
+   ‘PHP’,
+    ‘Ryby’
+];	
+Kiểm tra kiểu dữ liệu typeof;
+
+TOÁN TỬ SO SÁNH 
+Toán tử so sánh phần 2
+2 dấu bằng chỉ so sánh value của biến 
+3 dấu bằng so sánh cả kiểu dữ liệu
+
+Các kiểu là false !!0
+!!’false’Null.
+Var result = isB === 50 ? true : false
+
+ĐI VÀO CƠ BẢN :
+
+*Chuỗi trong java script
+Cách 1 : var fullName = ‘Nguyen Hoàng Nam ’; nên dung cách này;
+Cách 2 : var fullName = new String (‘Hoàng Nam’);
+
+Kiểm tra độ dài của chuỗi name.leng;
+Chú ý độ dài khi viết code ;
+Late string Es6;
+`Tôi là ${firstName} ${lastName`;
+
+
+Làm việc  với chuỗi;
+1.Name.length;
+
+2.Find index tìm vị trí chuỗi được nhập vào ;
+If -1 là kh tìm đc != -1 là tìm đượcis
+VD : console.log(name.indexOf(‘Tên tim kiếm',)hoặc (‘Tên tìm kiếm ’,số thứ tự nhảy) hoặc lastIndexOf(Tên tim kiếm) 
+Console.log(name.search(‘chỉ tìm được ký tự đầu tiên ’));
+3.Cut string 
+Vd : console.log(name.slice(4,6));0: start ,4 :bắt đầu;
+Cắt ngược lại thì là số âm;
+
+4.replace
+Vd : console.log(name.replace(current,’new current’));
+Nếu muốn đổi toàn bộ current thì dung chính quy /current/g,’new current’;
+
+5.convert to upper caseƒ
+Vd console.log(name.toUpperCase());
+
+7 trim 
+Xóa khoảng trống thừa ở 2 đầu thừa
+VD console.log(name.trim());
+
+8.Split	
+Tách từ dạng string sang array
+Var languages = ‘javascript , PHP, Ruby’;
+Console.log(languages.split(‘, ’));trong ngoặc là điểm chung;
+
+9.get a character by index //Lấy 1 ký tự bởi một index cho trước 
+Const myStrinh2 = ‘Son Dang’;
+Console.log(myString.charAt(vị trí muốn lấy));
+Hoặc myString2[số ký tự muốn lấy] trong trường hợp này rỗng sẽ là undefi
+
+SỐ TRONG JAVASCRIPT
+ 
+Phương thức	Vai trò
+Number.isFinite()	Xác định xem giá trị đã cho có phải là số hữu hạn hay không. Trả về boolean
+Number.isInteger()	Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về boolean
+Number.parseFloat()	Chuyển đổi chuỗi đã cho thành một số dấu phẩy động
+Number.parseInt()	Chuyển đổi chuỗi đã cho thành một số nguyên
+Number.prototype.toFixed()	Chuyển đổi và trả về chuỗi đại diện cho số đã cho, có số chữ số chính xác sau dấu thập phân
+Number.prototype.toString()	Chuyển đổi và trả về số đã cho dưới dạng chuỗi
+
+
+Number.isFinite(2 / 0); // false
+Number.isFinite(20 / 5); // true
+Number.isFinite(0 / 0); // false
+
+Number.isInteger(999999999); // true
+Number.isInteger(0.2);       // false
+Number.isInteger(Math.PI);   // false
+
+Number.parseFloat('10') // 10
+Number.parseFloat('10.00') // 10
+Number.parseFloat('238,21') // 238
+Number.parseFloat('237.22') // 237.22
+Number.parseFloat('34 56 78') // 34
+Number.parseFloat(' 37 ') // 37
+Number.parseFloat('18 is my age') // 18
+
+Number.parseInt('10') // 10
+Number.parseInt('10.00') // 10
+Number.parseInt('238,21') // 238
+Number.parseInt('237.22') // 237
+Number.parseInt('34 56 78') // 34
+Number.parseInt(' 37 ') // 37
+Number.parseInt('18 is my age') // 18
+
+var numberObject = 1234.56789;
+
+numberObject.toFixed(); // '1235'
+numberObject.toFixed(1); // '1234.6'
+numberObject.toFixed(6); // '1234.567890'
+
+(11).toString();    // '11'
+(18).toString();     // '18'
+(17.3).toString();   // '17.3'
+LÀM VIỆC VỚI MẢNG 
+isNaN(name) ; //hàm check NaN;
+hàm check Array là Array.isArray(name);	
+
+lấy phần tử mảng bằng cách 
+vd console.log[0];
+
+
+Làm việc với mảng:
++ toString();
+
++ join( - );  //tạo ký tự dấu ngăn cách ;
+
++  pop(); //Xóa phần tử cuối mảng và trả về phần tử bị xóa ;
+
++ push(‘add’) them một hoặc nhiều phần tử vào cuối mảng và trả về giá trị được thêm;
+
++shift() // Xóa phần tử ở đầu mảng và trả về phần tử bị xóa;
+
++unshift(‘add’) them một hoặc nhiều  phần tử vào đầu mảng và trả về giá trị được thêm;
+
++Splice(vị trí con trỏ,vị trí muốn xóa,vị trị sẽ chèn);
+
++concat // nối 2 Array với nhau;
+VD : console.log(languages.concat(languages2);	
+
++ slice();//cắt phần tử của mảng
+
+
+LÀM VIỆC VỚI HÀM
+
+1.Tham số :
+- Không giới hạn kiểu dữ liệu;
+-private chỉ sử dụng trong ngoặc của hàm;
+-định nghĩa ra tham số ;
+-arguments kh cần truyền tham số chỉ cần truyền đối số vẫn in ra nhiều được function(){
+	Console.log(argument);
+}
+Function(a,b);
+Namefunction(truyền tham số  vào đây)
+-Vòng lặp for var param of arguments
+ 
+HÀM RETURN 
+
+CÁC LOẠI FUNCTION
+
+1.Declaration function
+Function showMessage (){
+	bắt buộc phải đặt tên 	
+}
+2.Expression function 
+Sẽ được gán vào giá trị gì đó
+Var showMessage = function(){
+}
+
+Object trong javascript
+
+Vd 
+Var myInfo ={
+  Name: ‘Hoang nam’ ,
+  Age: ‘Ha noi ’,
+  From: ‘Viet nam’
+};
+Add new key 
+myInfo.email =‘nnam44565@gmail.com’;
+hoặc myInfo[‘my-email’] = ‘nnam44565@gmail.com’;
+
+//Lấy value ra ngoài
+Vd: myInfo.name;
+Cách 2 myInfo[‘name’];
+
+//them key bằng biến : var emailKey = ‘email’;
+[emaiKey] : ‘nnam44565@gmail.com’;
+
+//Xóa key value trong oject
+Delete myInfo.age;
+
+// Hàm trong object 
+Vd getName : function() {
+	Return this.name;
+}
+ Function là phương thức và other là thuộc tính ;
+
+
+Object contructor
+Điểm chung để tạo bản thiết kế 
+
+Function user(first name ,lastName,avartar){
+	This.firstName = firstName;
+	This.lastName = lastName;
+	This.avartar = avartar;
+	This.function(){
+}:
+}
+
+Var User = new user(‘Hoang’,’Nam’,’avartar’);
+
+user.title = ‘Chao cac ban’;
+Add 
+user.email = 'nnam44565@gmail.com';
+
+
+OBJECT PROTOTYE
+Giúp them thuộc tính ở ngoài hàm tạo mà kh cầm đối tượng và chung cho tất cả thdodio tượng 
+
+
+       function User(firstName,lastName,age){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.getName = function () {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+        User.prototype.className = 'F8';
+        User.prototype.getclassName = function() {
+            return this.className;
+        }
+        var user = new User('Nguyen','Nam',21);
+        console.log(user.className);
+        console.log(user.getclassName());
+
+Đối tượng Date
+
+	Var date = new Date();
+     var date = new Date();
+       var day = date.getDay();
+       var month = date.getMonth();
+       var year = date.getFullYear();
+       alert(` Hôm nay là ngày ${day}/${month}/${year}`);
+
+
+TOÁN TỬ 3 NGÔI 
+var result  = course.coin > 0 ? `${course.coin} coin` : 'free';
+
+
+Nếu coin > 0 thì in ra coin : người lại ;
+
+For-in-loop
+
+Vòng lặp này thường được sử dụng với mục đích là lặp trong một object chứ không phải trong array hay string giống như hai vòng lặp trên. Số lượng lặp tương ứng với số thuộc tính của object mà ta duyệt.
+
+      var myString = 'Nguyễn hoàng Nam ';
+        for(var key in myString){
+            console.log(myString);
+        }
+        // var myInfo = {
+        //     name : 'Nguyen Hoang Nam',
+        //     age : 21 ,
+        //     adress : 'Đà nẵng,Việt Nam'
+        // };
+        // for(var key in myInfo ){
+        //     console.log(myInfo[key]);
+        // }
+
+
+For / of loop
+
+Cú pháp for...of để chạy vòng lặp trên String, Array. Hoạc các đối tượng tương tự như Array
+        ứng dụng với mảng 
+        var language = [
+            'javascript',
+            'Ruby',
+            'PHP'
+        ];
+        for(var value of language ){
+            console.log(value);
+        }
+        ứng dụng với chuỗi 
+        
+        tách từng ký tự ra khỏi chuỗi
+        var language = 'Nguyen hoang nam';
+        for ( var value of language ){
+            console.log(value);
+        }
+
+        ứng dụng với object 
+        var myInfo = {
+            name : "Hoang Nam",
+            age : 21,
+        };
+        for (value of Object.values(myInfo)){
+            console.log(value);
+        }
+			
+
+Làm Việc với mảng phần 2 
+
+Duyệt qua từng phần tử của mảng dung forEach();
+courses.forEach(function (course,index) {
+            console.log(index,course); 
+        });
+
+
+Kiểm tra tất cả các phần tử của mảng dung every();
+
+Phải có return (điều kiện)
+var isFree = courses.every(function (course,index) {
+            return course.coin===0;
+        });
+        console.log(isFree);
+
+
+Kiểm tra chỉ cần có 1 phần tử duy nhất đúng thì sẽ đúng dung some()
+var isFree = courses.some(function (course,index) {
+            return course.coin===0;
+        });
+        console.log(isFree);
+
+Tìm phần tử trong mảng dung và chỉ lấy duy nhất phần từ tìm được find();
+var isFree = courses.find(function (course,index) {
+            return course.name === 'PHP';
+        });
+        console.log(isFree);
+
+Filter ngược lại find tìm tất cả phần tử đúng điều kiện
+
+var isFree = courses.filter(function (course,index) {
+            return course.name === 'PHP';
+        });
+        console.log(isFree);
+
+
+map() dung để thay đổi giá trị trong mảng thành một mảng mới ;
+var courses = [
+            {   id : 1,
+                name : 'javascript',
+                coin : 0
+            },
+            {   id : 2,
+                name : 'PHP',
+                coin : 1
+            },
+            {   id : 3,
+                name : 'CSS,HTML',
+                coin : 1
+            },
+            {   id : 4,
+                name : 'Lavare',
+                coin : 0
+            },
+            {   id : 5,
+                name : 'Ruby',
+                coin : 1
+            },
+        ];
+        var newCourses = courses.map(function(course,index,courses) {
+                return course.name;
+                // {
+                //     id : course.id,
+                //     name : `Khoa hoc : ${course.name}`,
+                //     coin : `Gia : ${course.coin} `,
+                //     index: index,
+                //     originArray : courses
+                // };
+        });
+        console.log(newCourses);
+
+Ép kiểu về Boolean(input),Number(input);
+
+Reduce trả về kết quả duy nhất dể tính reduce()
+  var courses = [
+          {
+            id : 1,
+            name : 'javascript',
+            coin : 200 
+          },
+          {
+            id : 2,
+            name : 'C++',
+            coin : 200 
+          },
+          {
+            id : 3,
+            name : 'React js',
+            coin : 200 
+          },
+          {
+            id : 4,
+            name : 'PHP',
+            coin : 200 
+          },
+          {
+            id : 5,
+            name : 'Ruby',
+            coin : 200 
+          }
+      ];
+      var sum = courses.reduce(function(varsave,currentValue){
+            return varsave+=currentValue.coin;
+      },0);
+      console.log(sum);
+
+includes method dùng để kiểm tra 1 string hoặc 1 mảng có phân tử đó háy kh  includes();//chỉ dung được với kiểu chuỗi
+Math object
+
+Math.PI() //sô PI
+Math.round()//Làm tròn gần 
+Math.ceil()//Làm tròn trên
+Math.floor()//Làm tròn dưới
+Math.random()//trả về số thập phân nhỏ hơn 1 
+Math.min()// lấy ra số nhỏ nhất.
+Math.max()//lấy ra sô lớn nhất 	
+
+Call back
+
+•	Là hàm 
+•	Được truyên qua đối số 
+•	Phải được gọi lại 
+•	Nói đơn giản là hàm này được gọi tới qua một hàm khác thì gọi là call back
+
+
+
+&& có nghĩa là truthy thì tiếp tục, còn flashy thì dừng, chạy đến khi nào tìm dc flashy thì thôi. Ko tìm dc flashy thì gán giá trị cuối cùng cho biến. Còn || là ngược lại, || giúp tìm truthy, nếu truthy thì dừng luôn.
+
+
+
+HTML DOM
+DOM là tên gọi viết tắt của (Document Object Model – tạm dịch Mô hình Các Đối tượng Tài liệu.
+ 
+Dom có 3 thành phần chính : Element , Attribute , Text;
+2. DOM API
+Là bộ API nằm trong Web API có mặt trên những môi trường hỗ trợ duyệt web - như trên trình duyệt. DOM API cung cấp các đối tượng và phương thức hỗ trợ truy xuất, chỉnh sửa các đối tượng / thành phần trong DOM.
+
+lấy element tử dom 
+qua phương thức document….
+1.document.getbyId()
+2.document.getbyclass();
+3.document.getbytag();
+4.document.query();
+5.documet.quyryAll();
+
+thêm 1 cách nữa là có thể đi tử cha vào con 
+Vd : var nodeHeading = document.getquerySelector('H1');
+
+nodeAtrtibute.getbyId('li');
+
+
+Attribute
+
+Đầu tiên phải đi từ element trước vì nó là con của element 
+
+Trường hợp 1 
+Vd : var nodeHeading = document.getquerySelector('H1');
+
+nodeHeading.title = 'Heading'; // đây là cách gọi hợp lệ 
+và có thế lấy ra luôn bằng cách
+console.log(nodeHeading.title);
+
+Trường hợp 2 
+Vd : var nodeHref = document.querySelector(h1);
+	NodeHref.setAttribute('href','link_heding') // trường hợp này không hợp lệ// sử dụng trường hợp này hơn
+	console.log(NodeHref.getAttribute(href);
+
+Inner text and text content property
++ Inner text and content đều giống nhau có thể lấy ra nội dung text bên trong element,đều bỏ qua thẻ tag
++ Khác nhau là innerText chỉ lấy đúng các text trong element mà mình nhin thấy 
+Còn textContent sẽ lấy toàn bộ cả dấu cách tất cả những gì có trong nó đúng như trong code
+Vid : var nodeHeading = document.querySelector(‘heading’);
+// lấy ra nodeHeading.innerText;
+	nodeHeading.contentText;
+
+muốn thay đổi giá trị text bên trong element : nodeHeading.innerText = ‘text mới trong String’;
+
+InnerHTML vs OuterHTML Property
+
+innerHTML dùng như intext chỉ khác là dùng để sửa thêm vào element và là nodeElement mới 
+Vidu : 
+Var nodeHeading = document.querySelector(‘div);
+       nodeHeading.innerHTML = (<h1>new heading</h1>);
+//đã theem node element mới vào dom có thể dung như nodeElement bình thường
+Console.log(document.querySelector(‘h1’).innerText);
+// khi không thêm tag HTML thì lại trở thành textnode ,
+
+Node property
+
+Atributenode giống như 1 cái mảng : thêm vào id hay class là sẽ thêm 1 độ dài 
+Textcontent là thuộc tính chung của cả 3 element
+
+DOM css
+
+Chỉ css được inline trong attribute
+   var nodeBox = document.querySelector('div');
+    //    //đây là viết đầy đủ
+    //     nodeBox.style.width = '100px'
+    //     nodeBox.style.height = '200px'
+    //     nodeBox.style.background = 'red'
+
+    //đây là viết tắt
+    Object.assign(nodeBox.style,{
+        width :'200px',
+        height : '100px',
+        backgroundColor : 'green'
+    })
+    console.log(nodeBox.style.height)
+
+
+
+ClassList DOM
+
+   var nodeBox = document.querySelector('div');
+        nodeBox.classList.add('box2','box3','box4')
+        console.log(nodeBox.classList.contains('box9'));//kiểm tra phần tử có có hay không
+        console.log(nodeBox.classList.remove('box2'));
+        nodeBox.classList.toggle('box2')//có thì sẽ xóa không có thì sẽ thêm vào
+        
+
+
+
+DOM event
+
+Attribute event 
+Sự kiện nổi bọt đi từ con tới cha 
+<h1 onclick="console.log(this)" style="cursor: pointer;">
+        <span>H1 element</span>
+    </h1>
+
+
+Assign event
+<h1>DOM event 1</h1>
+    <h1>DOM event 2</h1>
+    <h1>DOM event 3</h1>
+    <h1>DOM event 4</h1>
+    <script>
+         var H1element = document.querySelectorAll('h1')
+            for(var i = 0 ; i< H1element.length ; i++){
+                H1element[i].onclick = function(e){
+            console.log(e.target);   
+            }
+        }
+
+
+
+DOM event example
+Input-select lấy ra 
+Onchange  lấy value khi thay đổi và click ra khỏi outline
+Oninput  lấy value ngay khi thay đổi 
+  inputtext
+       inputElement.oninput = function(e){
+           console.log(e.target.value);
+       }
+
+    checkbox
+    inputElement.onchange = function(e){
+        console.log(e.target.checked)
+    }
+
+    select
+        inputElement.onchange = function(e){
+            console.log(e.target.value)
+        }
+
+        KeyboardEvent
+
+Xử lý khi bấm phím ở trên bàn phím
+
+Keyup
+keydown
+
+    <input type="text">
+       // KeyboardEvent
+           document.onkeypress = function(e){
+               console.log(e.which)
+               switch(e.which){
+                   case 27: console.log('exit');
+                   break;
+               }
+
+           }
+
+Prevent defaut and StopPropagation
+
+1.preventDefault Loại bỏ được hành vi được apply sẵn trên trình duyệt\
+ Ví dụ 1 : <a  href="https://fullstack.edu.vn">Fullstack</a>
+     <br>
+     <a  href="https://google.com">Google</a>
+     <script>
+         var aElement = document.getElementsByTagName('a');
+                for(var i = 0 ; i < aElement.length ; i++){
+                    aElement[i].onclick = function(e){
+                        if(!e.target.href.startsWith('https://fullstack.edu.vn')){
+                            e.preventDefault();
+                            console.log('không in ra được')
+                    }
+                }
+            }
+
+//ví dụ 2 
+ var ulElement = document.querySelector('ul');
+        ulElement.onmousedown = function(e) {
+            e.preventDefault();
+        }
+        ulElement.onclick = function(e){
+            console.log(e.target.innerText)
+        }
+
+2.stopPropagation loại bỏ sự kiện nổi bọt 
+    var divElement = document.querySelector('div');
+            divElement.onclick = function(){
+                console.log('div');
+            }
+
+        var btnElement = document.querySelector('div button');
+        btnElement.onclick = function(e){
+            e.stopPropagation();
+                console.log('button')
+            }
+
+
+
+Event listener
+
+Tác dụng tương tự Dom nhưng tùy vào trường hợp mà xử lý nó :
+Lợi thế : + xử lý nhiều việc khi event xảy ra  
+	+ lắng nghe / hủy bỏ lắng nghe 
+
+        var btn = document.getElementById('btn');
+        function event1(e){
+            console.log('event 1')
+        }
+        function event2(e){
+            console.log('event 2')
+        }
+        function event3(e){
+            console.log('event 3')
+        }
+        btn.addEventListener('click',event1);
+        btn.addEventListener('click',event2);
+        btn.addEventListener('click',event3);
+        setTimeout(function () {
+            btn.removeEventListener('click',event1)
+        },3000);
+
+Sử dụng DOM event trong những trường hợp ngắn gọn và không có nhu cầu gỡ bỏ nó đi 
+Event listenet sử dụng khi khi 1 xử kiện diễn ra nhưng muốn hủy bỏ đúng listener chỉ định 
+
+
+
+Object contructor
+function User(firstName,lastName,age){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.getName = function () {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+        var user = new User('Hoang','Nam',21);
+        user.email = 'nnam44565@gmail.com';
+        console.log(user.getName());
+
+JSON
+1Json là 1 định dạng dữ liệu,nó là chuỗi;
+2Viết tắt của từ JavaScript Object Notation
+3Json : Number ,Boolean ,Null,Array ,Object,String;
+
+Stringify : từ javascript types sang json / Parse  : Từ json qua javascript types 
+
+Var json = ‘[]’; /// mảng phải có nháy kép và không có dấu phẩy cuối 
+Var json = ‘[]’ // trong Object phải có nháy kép ở cả key và cả value ;
+
+Promise
+Là khái niệm sinh ra để xử lý thao tác bất đồng bộ,và trước khi có promise thì phải sử dụng callback sẽ sinh ra vấn đề là callback hell làm code rối rắm hơn.khó nhìn khó hiểu.vì thế sinh ra promise được sinh ra từ phiên bản mới của javascript ES6.để khắc phục tình trạng callback hell.Giúp code dễ đọc dễ hiểu hơn.
+ Để tạo ra promise ta có 2 bước 
+Bước 1 : new Promise và truyền vào contructor của nó 1 executor function trong executor  function Sẽ nhận được 2 tham số khi executor được thực thi  resolve(thành côg) và reject(Thất bại)
+Bước 2 : Executor
+
+Và khi sử dụng promise khi tạo đối tượng ra sẽ có 2 phương thức  .then and .catch đều nhận được call back function  và nó sẽ được thực thi vào then khi promise bị resolve và và ngược lại ;
+ 
+Sync
+ASync	
+
+Callback hell
+
+Promise concept
+
+
+Có 3 trạng thái 
+1.Pendding(chờ)
+2.fulfilled(thành công) bắt buộc phải gọi hàm resolve();
+3.rejector(thất bại) bắt buộc phải gọi hàm reject
+
+
+        var promise = new Promise(
+        // Executor    
+        function(resolve,reject){
+            // resolve thành công đều là hàm
+            //reject thất bại 
+            reject('eror');
+        });
+        
+        promise
+        .then(function(course){
+            //resolve
+            console.log(course);
+        })
+        .catch(function(error){
+            //rejector
+            console.log(error);
+        })
+        .finally(function(){
+            //cả 2 
+            console.log('done!');
+        });
+
+Promise (chain) //Tính chất chuỗi 
+
+      Ví dụ 1 : var promise = new Promise(function (resovle,reject) {
+            resovle()
+        })
+        promise 
+        .then(function () {
+            return 1;
+        })
+        .then(function (data) {
+            console.log(data);
+            return 2;
+        })
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(function(eror){
+            console.log(eror);
+        })
+        .finally(function(){
+            console.log('done');
+        });
+
+
+    //ví dụ 2   function sleep(ms){
+            return new Promise(function(resolve){
+                setTimeout(resolve,ms);
+            })
+        }
+        sleep(1000)
+        .then(function(){
+            console.log(1);
+            return sleep(1000);
+        })
+        .then(function(){
+            console.log(2);
+            return sleep(1000);
+        })
+        .then(function(){
+            console.log(3);
+            return sleep(1000);
+        })
+        .then(function(){
+            console.log(4);
+            return sleep(1000);
+        })
+
+Promise method
+
+1.promise.resolve(),rejector();
+var promise = Promise.reject('Error')
+        promise
+        .then(function(result){
+            console.log(result)
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+2.promise.All();// chỉ cần thằng reject lọt vô 1 cái là sẽ hủy luôn
+2. var promise1 = new Promise(function(resolve){
+            setTimeout(function(){
+                resolve([1]);
+            },1000);
+        })
+        var promise2 = Promise.reject('error')
+
+        Promise.all([promise1,promise2])
+        .then(function(resul){
+           console.log(resul[0].concat(resul[1]));
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Hàm sửa API
+function updateCourseApi(id,data){
+    var option = {
+        method :'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(data)
+        };
+    fetch(courseApi+'/'+id,option)
+    .then(function(response){
+        response.json();
+    })
+    .then(getCouses(renderCourses));
+}
+
+function getelement(slector){
+    return document.querySelector(slector);
+}
+function handleChangecourse(id){
+     getCouses(function(courses){
+         var thisCousres = courses.find(function(course){
+             return course.id === id;
+          })
+     })
+     var name = getelement('input[name="name"]');
+     var description = getelement('input[name="description"]')
+     name.value = 'thisCousres.name';
+     description.value = thisCousres.description;
+}
+
+
+Thư viện format tiền
+Intl.NumberFormat
+
